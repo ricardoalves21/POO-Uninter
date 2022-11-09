@@ -19,6 +19,5 @@ public class Principal {
 			System.out.println("Valor inválido, digite outro");
 			System.out.println(e);
 		}		
-	}
-	
+	}	
 }
