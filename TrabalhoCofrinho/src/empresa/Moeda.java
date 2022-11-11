@@ -6,11 +6,17 @@ public abstract class Moeda {
 	
 	protected double valor;
 	
+	
 	public Moeda(double valor) {
 		super();
 		this.valor = valor;
 	}
 
+	
+	public abstract void info();	
+	public abstract void converter();	
+
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(valor);
@@ -27,8 +33,4 @@ public abstract class Moeda {
 		Moeda other = (Moeda) obj;
 		return Double.doubleToLongBits(valor) == Double.doubleToLongBits(other.valor);
 	}
-
-	public abstract void info();	
-	public abstract void converter();	
-
 }
