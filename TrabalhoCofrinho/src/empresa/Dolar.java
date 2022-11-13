@@ -2,18 +2,20 @@ package empresa;
 
 public class Dolar extends Moeda {
 
-	public Dolar(double valor) {
-		super(valor);
+	public Dolar(String nome, double valor) {
+		super(nome, valor);
 	}
+	
+	public Dolar() {}
 
 	@Override
 	public void info() {
-		
+		System.out.println(nome + " - " + valor);
 	}
 
 	@Override
-	public void converter() {
-		double dolar = 5.35;		
+	public double converter() {
+		return valor * 5.35;
 	}
 	
 	

@@ -4,17 +4,21 @@ import java.util.Objects;
 
 public abstract class Moeda {
 	
+	protected String nome;
 	protected double valor;
 	
 	
-	public Moeda(double valor) {
-		super();
+	public Moeda(String nome, double valor) {
+		this.nome = nome;
 		this.valor = valor;
 	}
+	
+	public Moeda() {}
 
 	
-	public abstract void info();	
-	public abstract void converter();	
+	public abstract void info();
+	
+	public abstract double converter();	
 
 	
 	@Override
