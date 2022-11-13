@@ -2,18 +2,20 @@ package empresa;
 
 public class Real extends Moeda {
 
-	public Real(double valor) {
-		super(valor);
+	public Real(String nome, double valor) {
+		super(nome, valor);
 	}
+	
+	public Real() {}
 
 	@Override
 	public void info() {
-		
+		System.out.println(nome + " - " + valor);
 	}
 
 	@Override
-	public void converter() {
-		double real = 1.00;
+	public double converter() {
+		return valor * 1.00;
 	}
 
 }

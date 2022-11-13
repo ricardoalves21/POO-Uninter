@@ -16,8 +16,16 @@ public class Cofrinho {
 	
 	public void listagemMoedas() {
 		for (Moeda m : listaMoedas) {
-			System.out.println(m);
+			m.info();
 		}		
+	}
+	
+	public double converterMoedas() {
+		double total = 0;
+		for (Moeda m : listaMoedas) {
+			total += m.converter();
+		}	
+		return total;
 	}
 
 }

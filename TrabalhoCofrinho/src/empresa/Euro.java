@@ -2,18 +2,20 @@ package empresa;
 
 public class Euro extends Moeda {
 
-	public Euro(double valor) {
-		super(valor);
+	public Euro(String nome, double valor) {
+		super(nome, valor);
 	}
+	
+	public Euro() {}
 
 	@Override
 	public void info() {
-		
+		System.out.println(nome + " - " + valor);
 	}
 
 	@Override
-	public void converter() {
-		double euro = 5.44;
+	public double converter() {
+		return valor * 5.44;
 	}
 
 }
