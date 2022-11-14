@@ -19,14 +19,14 @@ public class Principal {
 		opcao = teclado.nextInt();
 		System.out.println("------------------------");	
 		
-		Moeda moeda; // criando a variavel para acessar atributos e metodos
-		Cofrinho cofrinho = new Cofrinho(); // criando o objeto para acessar os métodos do menu
+		Moeda moeda; // criando a variavel para acessar atributos e metodos da classe Moeda
+		Cofrinho cofrinho = new Cofrinho(); // criando o objeto para acessar os métodos da classe Cofrinho
 		
-		while(opcao != 0) {
+		while(opcao != 0) { // enquanto não escolher zero
 			
-			switch (opcao) {
+			switch (opcao) { // inicio do switch case
 			
-			case 1:
+			case 1: // opção para adicionar moedas
 				System.out.println("1. Real");
 				System.out.println("2. Dolar");
 				System.out.println("3. Euro");
@@ -34,33 +34,33 @@ public class Principal {
 				int moedaEscolhida = teclado.nextInt();
 				System.out.println("------------------------");
 				
-				if (moedaEscolhida == 1) {
+				if (moedaEscolhida == 1) { // caso opte pela moeda Real
 					System.out.print("Vai guardar quantos Reais? ");
 					Real real = new Real("Real", teclado.nextDouble());
 					moeda = real;					
 					cofrinho.adicionar(real);
 					break;
 				} 
-				else if (moedaEscolhida == 2) {
+				else if (moedaEscolhida == 2) { // caso opte pela moeda Dolar
 					System.out.print("Vai guardar quantos Dolares? ");
 					Dolar dolar = new Dolar("Dolar", teclado.nextDouble());
 					moeda = dolar;					
 					cofrinho.adicionar(dolar);
 					break;
 				}
-				else if (moedaEscolhida == 3) {
+				else if (moedaEscolhida == 3) { // caso opte pela moeda Euro
 					System.out.print("Vai guardar quantos Euros? ");
 					Euro euro = new Euro("Euro", teclado.nextDouble());
 					moeda = euro;					
 					cofrinho.adicionar(euro);
 					break;
 				}
-				else {
+				else { // caso não escolha nenhuma das opções de moedas
 					System.out.println("Você não escolheu uma moeda válida!");
 				}
 				break;
 				
-			case 2: 
+			case 2: // opção para remover moedas
 				System.out.println("1. Real");
 				System.out.println("2. Dolar");
 				System.out.println("3. Euro");
@@ -68,41 +68,41 @@ public class Principal {
 				int moedaEscolhidaRemover = teclado.nextInt();
 				System.out.println("------------------------");
 				
-				if (moedaEscolhidaRemover == 1) {
+				if (moedaEscolhidaRemover == 1) {  // para remover Reais
 					System.out.print("Vai remover quantos Reais? ");
 					Real real = new Real("Real", teclado.nextDouble());
 					moeda = real;					
 					cofrinho.remover(real);
 					break;
 				} 
-				else if (moedaEscolhidaRemover == 2) {
+				else if (moedaEscolhidaRemover == 2) { // para remover Dolares
 					System.out.print("Vai remover quantos Dolares? ");
 					Dolar dolar = new Dolar("Dolar", teclado.nextDouble());
 					moeda = dolar;					
 					cofrinho.remover(dolar);
 					break;
 				}
-				else if (moedaEscolhidaRemover == 3) {
+				else if (moedaEscolhidaRemover == 3) { // para remover Euros
 					System.out.print("Vai remover quantos Euros? ");
 					Euro euro = new Euro("Euro", teclado.nextDouble());
 					moeda = euro;					
 					cofrinho.remover(euro);
 					break;
 				}
-				else {
+				else { // caso escolha uma opção não listada
 					System.out.println("Você não escolheu uma moeda válida!");
 				}
 				break;
 				
-			case 3: 
+			case 3: // para listar as moedas do cofrinho
 				cofrinho.listagemMoedas();
 				break;
 				
-			case 4: 
+			case 4: // para converter todas as moedas do cofrinho em Reais e totaliza-las
 				System.out.printf("O total convertido para Real é %.2f\n", cofrinho.converterMoedas());				
 				break;
 				
-			default:
+			default: // caso escolha uma opção não listada
 				System.out.println("Opção inválida!");
 			}
 			System.out.println("------------------------");
@@ -118,6 +118,7 @@ public class Principal {
 		}
 		System.out.println("Obrigado por usar nosso software!");
 		System.out.println();
+		teclado.close();
 	}
 
 }

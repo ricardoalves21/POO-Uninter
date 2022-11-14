@@ -17,9 +17,5 @@ public class Dolar extends Moeda {
 	public double converter() {
 		return valor * 5.35;
 	}
-	
-	
-
-	
 
 }
